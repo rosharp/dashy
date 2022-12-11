@@ -2,12 +2,16 @@
 # Page meta info, like heading, footer text and nav links
 pageInfo:
   title: Dashy
-  description: Welcome to your new dashboard!
+  description: Hi, Ro
   navLinks:
-  - title: GitHub
-    path: https://github.com/Lissy93/dashy
-  - title: Documentation
-    path: https://dashy.to/docs
+  - title: Memos
+    path: http://localhost:5230/
+  - title: Firefly
+    path: http://localhost:80/
+  - title: Kuma
+    path: http://localhost:3001/dashboard
+  - title: Hastebin
+    path: http://localhost:7777/usagenesug.less
 
 # Optional app settings and configuration
 appConfig:
@@ -15,33 +19,129 @@ appConfig:
 
 # Main content - An array of sections, each containing an array of items
 sections:
-- name: Getting Started
-  icon: fas fa-rocket
-  items:
-  - title: Dashy Live
-    description: Development a project management links for Dashy
-    icon: https://i.ibb.co/qWWpD0v/astro-dab-128.png
-    url: https://live.dashy.to/
-    target: newtab
-  - title: GitHub
-    description: Source Code, Issues and Pull Requests
-    url: https://github.com/lissy93/dashy
-    icon: favicon
-  - title: Docs
-    description: Configuring & Usage Documentation
-    provider: Dashy.to
-    icon: far fa-book
-    url: https://dashy.to/docs
-  - title: Showcase
-    description: See how others are using Dashy
-    url: https://github.com/Lissy93/dashy/blob/master/docs/showcase.md
-    icon: far fa-grin-hearts
-  - title: Config Guide
-    description: See full list of configuration options
-    url: https://github.com/Lissy93/dashy/blob/master/docs/configuring.md
-    icon: fas fa-wrench
-  - title: Support
-    description: Get help with Dashy, raise a bug, or get in contact
-    url: https://github.com/Lissy93/dashy/blob/master/.github/SUPPORT.md
-    icon: far fa-hands-helping
-  
+  - name: Today
+    icon: far fa-smile-beam
+    displayData:
+      collapsed: false
+      hideForGuests: false
+    widgets:
+      - type: clock
+      - type: code-stats
+        options:
+          username: rosharp
+      - type: gl-mem-history
+          options:
+          hostname: http://localhost:80
+          limit: 80
+      - type: weather
+        options:
+          apiKey: efdbade728b37086877a5e83442004db
+          city: Tashkent
+
+  - name: Productivity
+    icon: far fa-briefcase
+    items:
+      - title: Notion
+        icon: favicon
+        url: https://notion.so/
+        description: Notes
+        tags: [notes, database]
+        hotkey: 1
+      - title: GMail
+        icon: favicon
+        url: https://mail.google.com/mail/u/0/#inbox
+        description: Google Mail
+        tags: [hosted, personal, email, mail]
+        hotkey: 2
+      - title: Hastebin
+        icon:  fa-clipboard
+        url: http://localhost:7777/
+        description: Clipboard
+        tags: [self-hosted, clipboard]
+        hotkey: 3
+
+  - name: Finance
+    icon: far fa-money
+    items:
+      - title: Firefly
+        icon: favicon
+        url: http://localhost:80/
+        description: Finance management tool
+        tags: [selfhosted, finance]
+        hotkey: 4
+
+  - name: Dev & Cloud
+    icon: far fa-code
+    items:
+      - title: GitHub
+        icon: favicon
+        url: https://github.com/
+      - title: StackOverflow
+        icon: favicon
+        url: http://stackoverflow.com/
+      - title: CloudFlare
+        icon: favicon
+        url: https://dash.cloudflare.com/
+        statusCheckAcceptCodes: "403"
+      - title: DigitalOcean
+        icon: favicon
+        url: https://cloud.digitalocean.com/
+      - title: Netlify
+        icon: favicon
+        url: https://app.netlify.com/
+      - title: CodeSandbox
+        icon: favicon
+        url: https://codesandbox.io/dashboard
+      - title: Hack the Box
+        icon: favicon
+        url: https://www.hackthebox.com/home
+      - title: Documentation
+        subItems:
+          - title: WDIO
+            icon: favicon
+            url: https://webdriver.io/
+          - title: Docker
+            url: https://docs.docker.com/
+            icon: si-docker
+            color: "#2496ED"
+          - title: MySQL
+            url: https://dev.mysql.com/doc/
+            icon: si-mysql
+            color: "#f29111"
+          - title: JavaScript
+            url: https://developer.mozilla.org
+            icon: si-javascript
+            color: "#F7DF1E"
+          - title: TypeScript
+            url: https://www.typescriptlang.org/docs
+            icon: si-typescript
+            color: "#3178C6"
+          - title: Svelt
+            url: https://svelte.dev/docs
+            icon: si-svelte
+            color: "#FF3E00"
+          - title: Go
+            url: https://go.dev/doc
+            icon: si-go
+            color: "#00ADD8"
+          - title: Rust
+            url: https://doc.rust-lang.org/reference
+            icon: si-rust
+            color: "#000000"
+
+  - name: Social & News
+    icon: far fa-thumbs-up
+    items:
+      - title: Telegram
+        icon: si-telegram
+        url: https://web.telegram.org/z/
+        hotkey: 5
+      - title: Reddit
+        icon: si-reddit
+        url: https://www.reddit.com/
+      - title: HackerNews
+        icon: si-ycombinator
+        url: https://news.ycombinator.com/
+      - title: YouTube
+        icon: si-youtube
+        url: https://youtube.com/

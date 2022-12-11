@@ -29,10 +29,6 @@ sections:
       - type: code-stats
         options:
           username: rosharp
-      - type: gl-mem-history
-          options:
-          hostname: http://localhost:80
-          limit: 80
       - type: weather
         options:
           apiKey: efdbade728b37086877a5e83442004db
